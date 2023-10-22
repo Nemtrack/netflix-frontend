@@ -1,3 +1,7 @@
+<h1>Netflix Magyar Tartalmak</h1>
+<div id="hr"></div>
+
+<!--
 <div class="container-fluid bg-dark">
   <div class="row p-4">
     <div class="col-lg-6">
@@ -24,20 +28,10 @@
     </div>
   </div>
 </div>
+-->
 
-<div class="container my-4">
-  <div class="row" id="movie-container">
-    <div class="card" style="width: 18rem">
-      <img
-        src="https://ocdn.eu/images/pulscms/NDA7MDA_/901515a665f2c460d838ed70728326d9.jpg"
-        class="card-img-top"
-        alt="tehetséges dani"
-      />
-      <div class="card-body">
-        <h5 class="card-title">tdany</h5>
-        <p class="card-text">legnagyobb repper</p>
-        <a href="#" class="btn btn-primary">Megmondtam</a>
-      </div>
-    </div>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of items" class="col-xl-2 col-4"></div>
   </div>
 </div>

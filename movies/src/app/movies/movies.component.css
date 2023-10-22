@@ -26,3 +26,43 @@
   font-size: 14px;
   color: #e50914;
 }
+
+body {
+  background-color: black;
+}
+
+@font-face {
+  font-family: Netflix;
+  src: url(src/app/movies/src/font/BebasNeue.otf);
+}
+
+h1 {
+  font-family: Netflix, Arial;
+  color: red;
+  font-size: 5vw;
+  text-align: center;
+  text-shadow: 3px 3px 3px darkred;
+}
+
+#hr {
+  background-color: darkred;
+  width: 100%;
+  height: 0.5%;
+  position: absolute;
+  top: 5vw;
+}
+
+.row {
+  padding-bottom: 2%;
+}
+
+.row div {
+  background-color: grey;
+  border: 1px solid black;
+  padding: 7%;
+}
+
+img:hover {
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
