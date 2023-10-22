@@ -14,10 +14,10 @@ export class WelcomeScreenComponent implements OnInit {
   }
 
   services: MovieService[] = [
-    new MovieService('netflix', './assets/netflix.jpg'),
-    new MovieService('hulu', './assets/hulu.jpg'),
-    new MovieService('prime', './assets/amazon.jpg'),
-    new MovieService('hbo', './assets/hbo.jpg'),
+    new MovieService('netflix', './assets/netflix.jpg', 'red'),
+    new MovieService('hulu', './assets/hulu.jpg', 'green'),
+    new MovieService('prime', './assets/amazon.jpg', 'blue'),
+    new MovieService('hbo', './assets/hbo.jpg', 'white'),
   ];
 
   onSetService(service: string) {
@@ -29,6 +29,13 @@ export class WelcomeScreenComponent implements OnInit {
   setHoveredItem(item: MovieService | null) {
     setTimeout(() => {
       this.hoveredItem = item;
+      if (this.hoveredItem != null && this.hoveredItem.title == 'netflix') {
+        this.hoveredItem.color = 'red';
+      }
     }, 500);
+  }
+
+  changeColorByHover() {
+    return null;
   }
 }
