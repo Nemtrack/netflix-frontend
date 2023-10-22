@@ -9,6 +9,7 @@ import { ServicesService } from '../shared/services.service';
 })
 export class WelcomeScreenComponent implements OnInit {
   constructor(private servicesServ: ServicesService) {}
+
   ngOnInit(): void {
     this.hoveredItem = null;
   }
@@ -27,12 +28,7 @@ export class WelcomeScreenComponent implements OnInit {
   hoveredItem?: MovieService | null;
 
   setHoveredItem(item: MovieService | null) {
-    setTimeout(() => {
-      this.hoveredItem = item;
-      if (this.hoveredItem != null && this.hoveredItem.title == 'netflix') {
-        this.hoveredItem.color = 'red';
-      }
-    }, 500);
+    this.hoveredItem = item;
   }
 
   changeColorByHover() {
