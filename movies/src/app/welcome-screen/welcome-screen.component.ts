@@ -9,6 +9,7 @@ import { ServicesService } from '../shared/services.service';
 })
 export class WelcomeScreenComponent implements OnInit {
   constructor(private servicesServ: ServicesService) {}
+  
   ngOnInit(): void {
     this.hoveredItem = null;
   }
@@ -27,8 +28,6 @@ export class WelcomeScreenComponent implements OnInit {
   hoveredItem?: MovieService | null;
 
   setHoveredItem(item: MovieService | null) {
-    setTimeout(() => {
-      this.hoveredItem = item;
-    }, 500);
+    this.hoveredItem = item;
   }
 }

@@ -13,7 +13,10 @@
           style="cursor: pointer"
           (mouseenter)="setHoveredItem(service)"
           (mouseleave)="setHoveredItem(null)"
-          [ngClass]="{ blurred: service !== hoveredItem && hoveredItem }"
+          [ngClass]="{
+            blurred: service !== hoveredItem && hoveredItem,
+            unblurred: service === hoveredItem || !hoveredItem
+          }"
         >
           <img
             src="{{ service.imgPath }}"
