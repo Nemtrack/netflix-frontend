@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from './move-services.model';
 import { ServicesService } from '../shared/services.service';
 
@@ -7,10 +7,11 @@ import { ServicesService } from '../shared/services.service';
   templateUrl: './welcome-screen.component.html',
   styleUrls: ['./welcome-screen.component.css'],
 })
-
-export class WelcomeScreenComponent {
-
-  constructor(private servicesServ: ServicesService) { }
+export class WelcomeScreenComponent implements OnInit {
+  constructor(private servicesServ: ServicesService) {}
+  ngOnInit(): void {
+    this.hoveredItem = null;
+  }
 
   services: MovieService[] = [
     new MovieService('netflix', './assets/netflix.jpg'),
@@ -21,5 +22,13 @@ export class WelcomeScreenComponent {
 
   onSetService(service: string) {
     this.servicesServ.setService(service);
+  }
+
+  hoveredItem?: MovieService | null;
+
+  setHoveredItem(item: MovieService | null) {
+    setTimeout(() => {
+      this.hoveredItem = item;
+    }, 500);
   }
 }

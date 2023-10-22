@@ -31,10 +31,6 @@ img {
   transition: filter 0.5s ease;
 }
 
-img:hover {
-  filter: invert(100%);
-}
-
 @font-face {
   font-family: Hollywood;
   src: url(/assets/hollywood_hills.ttf);
@@ -65,4 +61,18 @@ img:hover {
   100% {
     color: blue;
   }
+}
+
+@keyframes blurTimeout {
+  from {
+    filter: blur(0px);
+  }
+
+  to {
+    filter: blur(5px);
+  }
+}
+
+.blurred {
+  animation: blurTimeout 0.5s ease-in-out forwards;
 }

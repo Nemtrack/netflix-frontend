@@ -11,6 +11,9 @@
           (click)="onSetService(service.title)"
           class="h-100"
           style="cursor: pointer"
+          (mouseenter)="setHoveredItem(service)"
+          (mouseleave)="setHoveredItem(null)"
+          [ngClass]="{ blurred: service !== hoveredItem && hoveredItem }"
         >
           <img
             src="{{ service.imgPath }}"
