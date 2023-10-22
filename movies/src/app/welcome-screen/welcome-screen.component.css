@@ -1,12 +1,11 @@
 .title {
   font-size: clamp(1.5rem, 5vw, 10rem);
-  color: blue;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
   animation: opacity 3s ease-out;
-  animation: color-change 10s infinite forwards;
+  /* animation: color-change 10s infinite forwards; */
   animation-fill-mode: forwards;
   height: 30vh;
   font-family: Hollywood;
@@ -85,6 +84,26 @@ img {
 
 .blurred {
   animation: blurTimeout 0.3s ease-in-out forwards;
+}
+
+.red {
+  color: #dc0913;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.green {
+  color: #1edf7f;
+}
+
+.blue {
+  color: #1a92f5;
+}
+
+.white {
+  color: #ffffff;
 }
 
 .unblurred {

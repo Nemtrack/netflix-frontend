@@ -29,9 +29,21 @@ export class WelcomeScreenComponent implements OnInit {
 
   setHoveredItem(item: MovieService | null) {
     this.hoveredItem = item;
+    console.log(this.hoveredItem);
   }
 
-  changeColorByHover() {
-    return null;
+  changeColorByHover(): string {
+    switch (this.hoveredItem?.color) {
+      case 'red':
+        return 'red';
+      case 'green':
+        return 'green';
+      case 'blue':
+        return 'blue';
+      case 'white':
+        return 'white';
+      default:
+        return 'yellow';
+    }
   }
 }
