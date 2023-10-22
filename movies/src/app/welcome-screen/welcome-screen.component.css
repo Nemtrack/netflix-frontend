@@ -21,6 +21,15 @@
   animation-fill-mode: forwards;
 }
 
+img {
+  min-width: 100px; /* Set your desired minimum width */
+  min-height: 100px; /* Set your desired minimum height */
+  width: 100%; /* Ensure the image expands within its container */
+  height: 100%; /* Ensure the image expands within its container */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  border-radius: 50%;
+}
+
 @keyframes opacity {
   from {
     opacity: 0;

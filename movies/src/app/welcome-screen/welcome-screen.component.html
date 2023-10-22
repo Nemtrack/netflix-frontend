@@ -8,8 +8,8 @@
       <div *ngFor="let service of services" class="col">
         <div
           routerLink="movies/{{ service.title }}"
-          class="card"
-          style="width: 18rem; cursor: pointer"
+          class="h-100"
+          style="cursor: pointer"
         >
           <img
             src="{{ service.imgPath }}"
