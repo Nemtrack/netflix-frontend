@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css'],
 })
-export class MoviesComponent {}
+export class MoviesComponent {
+  items = [1, 2, 3, , 5, 6];
+}
