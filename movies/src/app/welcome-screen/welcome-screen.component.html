@@ -1,1 +1,13 @@
-<p>welcome-screen works!</p>
+<div>
+  <h1 class="title container-fluid">Movie searcher</h1>
+</div>
+
+<div class="service-list">
+  <div *ngFor="let service of services" class="card" style="width: 18rem">
+    <img
+      src="{{ service.imgPath }}"
+      class="card-img-top"
+      alt="{{ service.title }}"
+    />
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.title {
+  font-size: clamp(1.5rem, 5vw, 10rem);
+  font-weight: bold;
+  color: red;
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  justify-content: center;
+  pointer-events: none;
+  animation: opacity 2s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateY(-100%);
+  animation: opacity 3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
