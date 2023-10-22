@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FiltersService } from './filters.service';
+import { FiltersService } from '../shared/filters.service';
 
 @Component({
   selector: 'app-movies',
