@@ -7,7 +7,7 @@
     <div class="row">
       <div *ngFor="let service of services" class="col">
         <div
-          routerLink="movies"
+          routerLink="movies/{{ service.title }}"
           class="card"
           style="width: 18rem; cursor: pointer"
         >

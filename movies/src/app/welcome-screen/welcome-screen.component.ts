@@ -8,9 +8,9 @@ import { MovieService } from './move-services.model';
 })
 export class WelcomeScreenComponent {
   services: MovieService[] = [
-    new MovieService('Netflix', './assets/netflix.jpg'),
-    new MovieService('Hulu', './assets/hulu.jpg'),
-    new MovieService('Amazon Prime', './assets/amazon.jpg'),
-    new MovieService('HBO', './assets/hbo.jpg'),
+    new MovieService('netflix', './assets/netflix.jpg'),
+    new MovieService('hulu', './assets/hulu.jpg'),
+    new MovieService('prime', './assets/amazon.jpg'),
+    new MovieService('hbo', './assets/hbo.jpg'),
   ];
 }
