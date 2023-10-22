@@ -1,16 +1,19 @@
 <div>
-  <h1 class="title container-fluid">Movie searcher</h1>
-</div>
+  <div>
+    <h1 class="title container-fluid">Movie searcher</h1>
+  </div>
 
-<div class="service-list container">
-  <div class="row">
-    <div *ngFor="let service of services" class="col">
-      <div class="card" style="width: 18rem">
-        <img
-          src="{{ service.imgPath }}"
-          class="card-img-top"
-          alt="{{ service.title }}"
-        />
+  <div class="service-list container">
+    <div class="row">
+      <div *ngFor="let service of services" class="col">
+        <div routerLink="movies" class="card" style="width: 18rem">
+          <img
+            src="{{ service.imgPath }}"
+            class="card-img-top"
+            style="cursor: pointer"
+            alt="{{ service.title }}"
+          />
+        </div>
       </div>
     </div>
   </div>
