@@ -1,7 +1,7 @@
 .title {
   font-size: clamp(1.5rem, 5vw, 10rem);
   font-weight: bold;
-  color: red;
+  color: blue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,10 +32,16 @@
 
 @keyframes color-change {
   0% {
+    color: blue;
+  }
+  25% {
     color: red;
   }
   50% {
     color: green;
+  }
+  75% {
+    color: red;
   }
   100% {
     color: blue;
