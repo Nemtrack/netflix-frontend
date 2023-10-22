@@ -33,7 +33,7 @@ body {
 
 @font-face {
   font-family: Netflix;
-  src: url(src/app/movies/src/font/BebasNeue.otf);
+  src: url(/assets/BebasNeue.otf);
 }
 
 h1 {
@@ -50,6 +50,7 @@ h1 {
   height: 0.5%;
   position: absolute;
   top: 5vw;
+  pointer-events: none;
 }
 
 .row {

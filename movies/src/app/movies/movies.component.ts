@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent {
-  items = [1, 2, 3, , 5, 6];
+  items = [1, 2, 3, 4, 5, 6];
 }
