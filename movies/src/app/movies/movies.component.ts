@@ -13,11 +13,10 @@ export class MoviesComponent implements OnInit {
     private servicesServ: ServicesService
   ) {}
 
-  service?: string;
-
   ngOnInit(): void {
     this.service = this.servicesServ.getService();
   }
 
+  service?: string;
   items = [1, 2, 3, 4, 5, 6];
 }
