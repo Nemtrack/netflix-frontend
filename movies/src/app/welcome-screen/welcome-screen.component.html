@@ -6,11 +6,14 @@
   <div class="service-list container">
     <div class="row">
       <div *ngFor="let service of services" class="col">
-        <div routerLink="movies" class="card" style="width: 18rem">
+        <div
+          routerLink="movies"
+          class="card"
+          style="width: 18rem; cursor: pointer"
+        >
           <img
             src="{{ service.imgPath }}"
             class="card-img-top"
-            style="cursor: pointer"
             alt="{{ service.title }}"
           />
         </div>
