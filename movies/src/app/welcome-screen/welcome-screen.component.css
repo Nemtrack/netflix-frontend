@@ -30,3 +30,9 @@
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1399px) {
+  .title {
+    visibility: hidden;
+  }
+}
