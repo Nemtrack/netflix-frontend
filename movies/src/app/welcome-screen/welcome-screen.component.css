@@ -4,9 +4,6 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  animation: opacity 3s ease-out;
-  /* animation: color-change 10s infinite forwards; */
-  animation-fill-mode: forwards;
   height: 30vh;
   font-family: Hollywood;
   color: yellow;
@@ -34,15 +31,6 @@ img {
 @font-face {
   font-family: Hollywood;
   src: url(/assets/hollywood_hills.ttf);
-}
-
-@keyframes opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes blurTimeout {
