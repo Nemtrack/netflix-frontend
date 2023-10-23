@@ -33,11 +33,8 @@ export class WelcomeScreenComponent implements OnInit {
 
   setTitleColorBasedOnServiceColor() {
     const title = document.querySelector('.title') as HTMLElement;
-
-    if (this.hoveredItem) {
-      title.style.color = this.hoveredItem?.color;
-    } else {
-      title.style.color = 'yellow';
-    }
+    this.hoveredItem
+      ? (title.style.color = this.hoveredItem?.color)
+      : (title.style.color = 'yellow');
   }
 }
