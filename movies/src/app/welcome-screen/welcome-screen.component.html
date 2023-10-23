@@ -12,13 +12,6 @@
           routerLink="movies"
           (click)="onSetService(service.title)"
           class="h-100"
-          style="cursor: pointer"
-          (mouseenter)="
-            setHoveredItem(service); setTitleColorBasedOnServiceColor()
-          "
-          (mouseleave)="
-            setHoveredItem(null); setTitleColorBasedOnServiceColor()
-          "
           [ngClass]="{
             blurred: service !== hoveredItem && hoveredItem,
             unblurred: service === hoveredItem || !hoveredItem
@@ -27,7 +20,14 @@
           <img
             src="{{ service.imgPath }}"
             class="card-img-top"
+            style="cursor: pointer"
             alt="{{ service.title }}"
+            (mouseenter)="
+              setHoveredItem(service); setTitleColorBasedOnServiceColor()
+            "
+            (mouseleave)="
+              setHoveredItem(null); setTitleColorBasedOnServiceColor()
+            "
           />
         </div>
       </div>
