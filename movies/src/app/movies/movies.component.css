@@ -36,10 +36,10 @@ body {
   src: url(/assets/BebasNeue.otf);
 }
 
-h1 {
+.title {
   font-family: Netflix, Arial;
   color: red;
-  font-size: 5vw;
+  font-size: 10vw;
   text-align: center;
   text-shadow: 3px 3px 3px darkred;
 }
@@ -49,7 +49,7 @@ h1 {
   width: 100%;
   height: 0.5%;
   position: absolute;
-  top: 5vw;
+  top: 10vw;
   pointer-events: none;
 }
 
