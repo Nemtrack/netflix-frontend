@@ -2,3 +2,15 @@ body {
   background-color: #141414;
   color: #ffffff;
 }
+
+.title {
+  font-size: clamp(2.4rem, 12vw, 8rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  pointer-events: none;
+  height: 30vh;
+  font-family: Hollywood;
+  color: yellow;
+  transition: color 0.3s ease;
+}
