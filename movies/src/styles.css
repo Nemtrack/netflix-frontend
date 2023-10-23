@@ -14,3 +14,8 @@ body {
   color: yellow;
   transition: color 0.3s ease;
 }
+
+@font-face {
+  font-family: Hollywood;
+  src: url(/assets/hollywood_hills.ttf);
+}

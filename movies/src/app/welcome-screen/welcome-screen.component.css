@@ -14,11 +14,6 @@ img {
   border-radius: 50%;
 }
 
-@font-face {
-  font-family: Hollywood;
-  src: url(/assets/hollywood_hills.ttf);
-}
-
 @keyframes blurTimeout {
   from {
     filter: blur(0px);
