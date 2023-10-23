@@ -1,5 +1,5 @@
 .title {
-  font-size: clamp(2.4rem, 5vw, 10rem);
+  font-size: clamp(2.4rem, 12vw, 8rem);
   display: flex;
   align-items: flex-start;
   justify-content: center;
