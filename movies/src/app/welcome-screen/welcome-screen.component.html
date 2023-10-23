@@ -9,7 +9,6 @@
         class="col-xs-12 col-md-6 col-lg-4 col-xxl-3 p-3"
       >
         <div
-          routerLink="movies"
           (click)="onSetService(service.title)"
           class="h-100"
           [ngClass]="{
@@ -22,6 +21,7 @@
             class="card-img-top"
             style="cursor: pointer"
             alt="{{ service.title }}"
+            routerLink="flags"
             (mouseenter)="
               setHoveredItem(service); setTitleColorBasedOnServiceColor()
             "
