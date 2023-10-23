@@ -58,7 +58,3 @@ img {
 .unblurred {
   animation: unblurTimeout 0.3s ease-in-out forwards;
 }
-
-.footer-container {
-  margin-top: 9%;
-}
