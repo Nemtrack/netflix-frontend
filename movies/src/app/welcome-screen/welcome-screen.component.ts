@@ -15,10 +15,10 @@ export class WelcomeScreenComponent implements OnInit {
   }
 
   services: MovieService[] = [
-    new MovieService('netflix', './assets/netflix.jpg', 'red'),
-    new MovieService('hulu', './assets/hulu.jpg', 'green'),
-    new MovieService('prime', './assets/amazon.jpg', 'blue'),
-    new MovieService('hbo', './assets/hbo.jpg', 'white'),
+    new MovieService('netflix', './assets/netflix.jpg'),
+    new MovieService('hulu', './assets/hulu.jpg'),
+    new MovieService('prime', './assets/amazon.jpg'),
+    new MovieService('hbo', './assets/hbo.jpg'),
   ];
 
   onSetService(service: string) {
@@ -29,21 +29,26 @@ export class WelcomeScreenComponent implements OnInit {
 
   setHoveredItem(item: MovieService | null) {
     this.hoveredItem = item;
-    console.log(this.hoveredItem);
   }
 
-  changeColorByHover(): string {
-    switch (this.hoveredItem?.color) {
-      case 'red':
-        return 'red';
-      case 'green':
-        return 'green';
-      case 'blue':
-        return 'blue';
-      case 'white':
-        return 'white';
+  setTitleColorBasedOnServiceColor() {
+    const title = document.querySelector('.title') as HTMLElement;
+
+    switch (this.hoveredItem?.title) {
+      case 'netflix':
+        title.style.color = '#dc0913';
+        break;
+      case 'hulu':
+        title.style.color = '#1edf7f';
+        break;
+      case 'prime':
+        title.style.color = '#1a92f5';
+        break;
+      case 'hbo':
+        title.style.color = 'white';
+        break;
       default:
-        return 'yellow';
+        title.style.color = 'yellow';
     }
   }
 }

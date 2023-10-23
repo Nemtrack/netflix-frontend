@@ -9,6 +9,7 @@
   animation-fill-mode: forwards;
   height: 30vh;
   font-family: Hollywood;
+  color: yellow;
 }
 
 .service-list {
@@ -44,24 +45,6 @@ img {
   }
 }
 
-@keyframes color-change {
-  0% {
-    color: blue;
-  }
-  25% {
-    color: red;
-  }
-  50% {
-    color: green;
-  }
-  75% {
-    color: red;
-  }
-  100% {
-    color: blue;
-  }
-}
-
 @keyframes blurTimeout {
   from {
     filter: blur(0px);
@@ -84,26 +67,6 @@ img {
 
 .blurred {
   animation: blurTimeout 0.3s ease-in-out forwards;
-}
-
-.red {
-  color: #dc0913;
-}
-
-.yellow {
-  color: yellow;
-}
-
-.green {
-  color: #1edf7f;
-}
-
-.blue {
-  color: #1a92f5;
-}
-
-.white {
-  color: #ffffff;
 }
 
 .unblurred {

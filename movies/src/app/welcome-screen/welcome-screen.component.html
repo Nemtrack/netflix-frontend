@@ -1,8 +1,6 @@
 <div>
   <div>
-    <h1 [ngClass]="changeColorByHover()" class="title container-fluid">
-      Movie searcher
-    </h1>
+    <h1 class="title container-fluid">Movie searcher</h1>
   </div>
 
   <div class="service-list container">
@@ -13,8 +11,12 @@
           (click)="onSetService(service.title)"
           class="h-100"
           style="cursor: pointer"
-          (mouseenter)="setHoveredItem(service)"
-          (mouseleave)="setHoveredItem(null)"
+          (mouseenter)="
+            setHoveredItem(service); setTitleColorBasedOnServiceColor()
+          "
+          (mouseleave)="
+            setHoveredItem(null); setTitleColorBasedOnServiceColor()
+          "
           [ngClass]="{
             blurred: service !== hoveredItem && hoveredItem,
             unblurred: service === hoveredItem || !hoveredItem
