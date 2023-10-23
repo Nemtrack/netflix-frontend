@@ -5,7 +5,7 @@
 
   <div class="service-list container">
     <div class="row">
-      <div *ngFor="let service of services" class="col">
+      <div *ngFor="let service of services" class="col-3">
         <div
           routerLink="movies"
           (click)="onSetService(service.title)"

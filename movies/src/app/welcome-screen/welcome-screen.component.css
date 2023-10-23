@@ -15,8 +15,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  animation: opacity 3s ease-out;
-  animation-fill-mode: forwards;
 }
 
 img {
@@ -26,7 +24,6 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  transition: filter 0.5s ease;
 }
 
 @font-face {
