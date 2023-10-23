@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FlagsComponent } from './flags/flags.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeScreenComponent, MoviesComponent, FlagsComponent],
+  declarations: [AppComponent, WelcomeScreenComponent, MoviesComponent, FlagsComponent, ErrorComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
