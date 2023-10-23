@@ -7,6 +7,7 @@
   height: 30vh;
   font-family: Hollywood;
   color: yellow;
+  transition: color 0.3s ease;
 }
 
 .service-list {
