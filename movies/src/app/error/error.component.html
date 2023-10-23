@@ -1,8 +1,15 @@
-<div class="container">
-  <h1
-    class="display-1 d-flex justify-content-center align-items-center"
-    style="height: 99vh; pointer-events: none; color: red; font-family: Hollywood;"
-  >
-    404 error!
-  </h1>
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="height: 99vh"
+>
+  <div class="col text-center d-flex flex-column align-items-center">
+    <h1
+      class="display-1"
+      style="pointer-events: none; color: red; font-family: Hollywood"
+    >
+      404 error!
+    </h1>
+    <div class="p-4 display-6">{{ quote }}</div>
+    <button class="btn btn-primary btn-lg" routerLink="/">Home</button>
+  </div>
 </div>
