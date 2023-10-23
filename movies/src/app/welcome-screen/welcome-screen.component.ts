@@ -15,10 +15,10 @@ export class WelcomeScreenComponent implements OnInit {
   }
 
   services: MovieService[] = [
-    new MovieService('netflix', './assets/netflix.jpg'),
-    new MovieService('hulu', './assets/hulu.jpg'),
-    new MovieService('prime', './assets/amazon.jpg'),
-    new MovieService('hbo', './assets/hbo.jpg'),
+    new MovieService('netflix', './assets/netflix.jpg', '#dc0913'),
+    new MovieService('hulu', './assets/hulu.jpg', '#1edf7f'),
+    new MovieService('prime', './assets/amazon.jpg', '#1a92f5'),
+    new MovieService('hbo', './assets/hbo.jpg', 'white'),
   ];
 
   onSetService(service: string) {
@@ -34,21 +34,10 @@ export class WelcomeScreenComponent implements OnInit {
   setTitleColorBasedOnServiceColor() {
     const title = document.querySelector('.title') as HTMLElement;
 
-    switch (this.hoveredItem?.title) {
-      case 'netflix':
-        title.style.color = '#dc0913';
-        break;
-      case 'hulu':
-        title.style.color = '#1edf7f';
-        break;
-      case 'prime':
-        title.style.color = '#1a92f5';
-        break;
-      case 'hbo':
-        title.style.color = 'white';
-        break;
-      default:
-        title.style.color = 'yellow';
+    if (this.hoveredItem) {
+      title.style.color = this.hoveredItem?.color;
+    } else {
+      title.style.color = 'yellow';
     }
   }
 }
