@@ -1,3 +1,24 @@
+export interface SimplifiedApiResponse {
+  countries: {
+    countryCode: string;
+    name: string;
+    services: Service[];
+  }[];
+}
+
+export interface Service {
+  id: string;
+  name: string;
+  homePage: string;
+  themeColorCode: string;
+}
+
+export interface Country {
+  countryCode: string;
+  name: string;
+  services: Service[];
+}
+
 export interface Root {
   type: string
   additionalProperties: boolean
