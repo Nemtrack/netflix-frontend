@@ -17,5 +17,9 @@ export class FlagsComponent implements OnInit {
     });
   }
 
+  onCountryClicked(country: string) : void {
+    
+  }
+
   countries: SimpleCountry[] = [];
 }

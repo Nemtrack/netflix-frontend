@@ -8,6 +8,7 @@ import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.componen
 import { MoviesComponent } from './movies/movies.component';
 import { FlagsComponent } from './flags/flags.component';
 import { ErrorComponent } from './error/error.component';
+import { FilterComponent } from './filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ErrorComponent } from './error/error.component';
     MoviesComponent,
     FlagsComponent,
     ErrorComponent,
+    FilterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
