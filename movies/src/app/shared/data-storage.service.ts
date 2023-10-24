@@ -5,6 +5,7 @@ import {
   Country,
   Result,
   Service,
+  SimpleCountry,
   SimplifiedApiResponse,
 } from './get-models/get-countries.model';
 import { Observable, map } from 'rxjs';
@@ -33,7 +34,7 @@ export class DataStorageService {
       )
       .pipe(
         map((response) => {
-          const countries: Country[] = [];
+          const countries: SimpleCountry[] = [];
           for (const countryCode in response.result) {
             const countryData = response.result[countryCode];
             const services: Service[] = [];
@@ -47,10 +48,10 @@ export class DataStorageService {
               };
               services.push(service);
             }
-            const country: Country = {
-              countryCode: countryData.countryCode,
+            const country: SimpleCountry = {
+              countryCode: countryData.countryCode.toUpperCase(),
               name: countryData.name,
-              services: services,
+              services: services.map((service) => service.name),
             };
             countries.push(country);
           }

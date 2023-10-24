@@ -4,7 +4,7 @@ body {
 }
 
 .title {
-  font-size: clamp(2.4rem, 12vw, 8rem);
+  font-size: clamp(2rem, 11vw, 8rem);
   display: flex;
   align-items: flex-start;
   justify-content: center;
