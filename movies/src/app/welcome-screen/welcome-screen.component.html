@@ -9,7 +9,6 @@
         class="col-xs-12 col-md-6 col-lg-4 col-xxl-3 p-3"
       >
         <div
-          (click)="onSetService(service.title)"
           class="h-100"
           [ngClass]="{
             blurred: service !== hoveredItem && hoveredItem,
@@ -18,6 +17,7 @@
         >
           <img
             src="{{ service.imgPath }}"
+            (click)="onSetService(service.title)"
             class="card-img-top"
             style="cursor: pointer"
             alt="{{ service.title }}"

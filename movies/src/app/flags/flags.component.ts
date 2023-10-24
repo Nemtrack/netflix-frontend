@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { SimpleCountry } from '../shared/get-models/get-countries.model';
+import { FiltersService } from '../shared/filters.service';
 
 @Component({
   selector: 'app-flags',
@@ -8,7 +9,10 @@ import { SimpleCountry } from '../shared/get-models/get-countries.model';
   styleUrls: ['./flags.component.css'],
 })
 export class FlagsComponent implements OnInit {
-  constructor(private http: DataStorageService) {}
+  constructor(
+    private http: DataStorageService,
+    private filters: FiltersService
+  ) {}
 
   ngOnInit(): void {
     this.http.getCountriesData().subscribe((data) => {
@@ -17,8 +21,8 @@ export class FlagsComponent implements OnInit {
     });
   }
 
-  onCountryClicked(country: string) : void {
-    
+  onCountryClicked(country: string): void {
+    this.filters.setCountry(country);
   }
 
   countries: SimpleCountry[] = [];
