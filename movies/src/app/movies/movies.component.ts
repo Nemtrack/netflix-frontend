@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FiltersService } from '../shared/filters.service';
-import { ServicesService } from '../shared/services.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,13 +7,10 @@ import { ServicesService } from '../shared/services.service';
   styleUrls: ['./movies.component.css'],
 })
 export class MoviesComponent implements OnInit {
-  constructor(
-    private filters: FiltersService,
-    private servicesServ: ServicesService
-  ) {}
+  constructor(private filters: FiltersService) {}
 
   ngOnInit(): void {
-    this.service = this.servicesServ.getService();
+    this.service = this.filters.getService();
   }
 
   service?: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from './move-services.model';
-import { ServicesService } from '../shared/services.service';
+import { FiltersService } from '../shared/filters.service';
 
 @Component({
   selector: 'app-welcome-screen',
@@ -8,7 +8,7 @@ import { ServicesService } from '../shared/services.service';
   styleUrls: ['./welcome-screen.component.css'],
 })
 export class WelcomeScreenComponent implements OnInit {
-  constructor(private servicesServ: ServicesService) {}
+  constructor(private filtersServ: FiltersService) {}
 
   ngOnInit(): void {
     this.hoveredItem = null;
@@ -22,7 +22,7 @@ export class WelcomeScreenComponent implements OnInit {
   ];
 
   onSetService(service: string) {
-    this.servicesServ.setService(service);
+    this.filtersServ.setService(service);
   }
 
   hoveredItem?: MovieService | null;
