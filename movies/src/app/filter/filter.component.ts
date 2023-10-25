@@ -16,4 +16,10 @@ export class FilterComponent implements OnInit {
       this.filter.getService()
     );
   }
+
+  toggler = false;
+
+  onToggleCollapsed() {
+    this.toggler = !this.toggler;
+  }
 }
