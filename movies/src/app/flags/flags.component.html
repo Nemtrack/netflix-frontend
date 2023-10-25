@@ -13,7 +13,10 @@
         >
           <img
             class="card-img-top bg-dark border-0"
-            src="https://flagsapi.com/{{ country.countryCode }}/flat/64.png"
+            src="https://flagcdn.com/w320/{{
+              country.countryCode | lowercase
+            }}.png"
+            style="max-height: 100px;"
           />
           <div class="card-body text-center text-bg-dark d-none d-sm-block">
             <div class="card-title">{{ country.name }}</div>
