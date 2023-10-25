@@ -19,6 +19,7 @@ export class WelcomeScreenComponent implements OnInit {
     new MovieService('hulu', './assets/hulu.jpg', '#1edf7f'),
     new MovieService('prime', './assets/amazon.jpg', '#1a92f5'),
     new MovieService('hbo', './assets/hbo.jpg', 'white'),
+    new MovieService('disney', './assets/disney.jpg', 'rgb(30,51,116)'),
   ];
 
   onSetService(service: string) {
