@@ -10,7 +10,6 @@ body {
   align-items: flex-start;
   justify-content: center;
   pointer-events: none;
-  height: 30vh;
   font-family: Hollywood;
   color: yellow;
   transition: color 0.3s ease;
