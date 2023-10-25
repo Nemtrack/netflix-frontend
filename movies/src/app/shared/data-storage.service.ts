@@ -37,7 +37,7 @@ export class DataStorageService {
             const services: string[] = [];
             for (const service in countryData.services) {
               const serviceData = countryData.services[service];
-              services.push(serviceData.name);
+              services.push(serviceData.id);
             }
             const country: SimpleCountry = {
               countryCode: countryData.countryCode.toUpperCase(),

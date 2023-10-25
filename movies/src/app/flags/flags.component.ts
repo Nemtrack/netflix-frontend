@@ -15,8 +15,11 @@ export class FlagsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.service = this.filters.getService();
     this.http.getCountriesData().subscribe((data) => {
-      this.countries = data.countries;
+      this.countries = data.countries.filter((country) => {
+        return country.services.includes(this.service as string);
+      });
       console.log(this.countries);
     });
   }
@@ -25,5 +28,6 @@ export class FlagsComponent implements OnInit {
     this.filters.setCountry(country);
   }
 
+  service?: string;
   countries: SimpleCountry[] = [];
 }
