@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import {
-  Service,
   SimpleCountry,
   SimplifiedApiResponse,
 } from './get-models/get-countries.model';
@@ -35,21 +34,15 @@ export class DataStorageService {
           const countries: SimpleCountry[] = [];
           for (const countryCode in response.result) {
             const countryData = response.result[countryCode];
-            const services: Service[] = [];
-            for (const serviceId in countryData.services) {
-              const serviceData = countryData.services[serviceId];
-              const service: Service = {
-                id: serviceData.id,
-                name: serviceData.name,
-                homePage: serviceData.homePage,
-                themeColorCode: serviceData.themeColorCode,
-              };
-              services.push(service);
+            const services: string[] = [];
+            for (const service in countryData.services) {
+              const serviceData = countryData.services[service];
+              services.push(serviceData.name);
             }
             const country: SimpleCountry = {
               countryCode: countryData.countryCode.toUpperCase(),
               name: countryData.name,
-              services: services.map((service) => service.name),
+              services: services,
             };
             countries.push(country);
           }
