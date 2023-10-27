@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment.development';
 import {
   ApiResponse,
   SimplifiedApiResponse,
-  SimpleCountry
+  SimpleCountry,
 } from './get-models/get-countries.model';
 import { Observable, map } from 'rxjs';
 
@@ -23,30 +23,38 @@ export class DataStorageService {
     },
   };
 
+  isLoading(loading: boolean): boolean {
+    return loading;
+  }
+
   getCountriesData(): Observable<SimplifiedApiResponse> {
+    this.isLoading(true);
     return this.http
       .request<ApiResponse>(
         this.countriesOptions.method,
         this.countriesOptions.url,
         { headers: this.countriesOptions.headers }
       )
-      .pipe(map((response) => {
-        const countries: SimpleCountry[] = [];
-        for (const countryCode in response.result){
-          const countryData = response.result[countryCode];
-          const services: string[] = [];
-          for (const service in countryData.services) {
-            const serviceData = countryData.services[service];
-            services.push(serviceData.id);
+      .pipe(
+        map((response) => {
+          const countries: SimpleCountry[] = [];
+          for (const countryCode in response.result) {
+            const countryData = response.result[countryCode];
+            const services: string[] = [];
+            for (const service in countryData.services) {
+              const serviceData = countryData.services[service];
+              services.push(serviceData.id);
+            }
+            const country: SimpleCountry = {
+              countryCode: countryData.countryCode.toUpperCase(),
+              name: countryData.name,
+              services: services,
+            };
+            countries.push(country);
           }
-          const country: SimpleCountry = {
-            countryCode: countryData.countryCode.toUpperCase(),
-            name: countryData.name,
-            services: services,
-          };
-          countries.push(country);
-        }
-        return { countries };
-      }));
+          this.isLoading(false);
+          return { countries };
+        })
+      );
   }
 }

@@ -9,6 +9,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { FlagsComponent } from './flags/flags.component';
 import { ErrorComponent } from './error/error.component';
 import { FilterComponent } from './filter/filter.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FilterComponent } from './filter/filter.component';
     FlagsComponent,
     ErrorComponent,
     FilterComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
