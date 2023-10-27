@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import {
-  SimpleCountry,
+  ApiResponse,
   SimplifiedApiResponse,
+  SimpleCountry
 } from './get-models/get-countries.model';
 import { Observable, map } from 'rxjs';
 
@@ -24,30 +25,28 @@ export class DataStorageService {
 
   getCountriesData(): Observable<SimplifiedApiResponse> {
     return this.http
-      .request<{ result: { [key: string]: any } }>(
+      .request<ApiResponse>(
         this.countriesOptions.method,
         this.countriesOptions.url,
         { headers: this.countriesOptions.headers }
       )
-      .pipe(
-        map((response) => {
-          const countries: SimpleCountry[] = [];
-          for (const countryCode in response.result) {
-            const countryData = response.result[countryCode];
-            const services: string[] = [];
-            for (const service in countryData.services) {
-              const serviceData = countryData.services[service];
-              services.push(serviceData.id);
-            }
-            const country: SimpleCountry = {
-              countryCode: countryData.countryCode.toUpperCase(),
-              name: countryData.name,
-              services: services,
-            };
-            countries.push(country);
+      .pipe(map((response) => {
+        const countries: SimpleCountry[] = [];
+        for (const countryCode in response.result){
+          const countryData = response.result[countryCode];
+          const services: string[] = [];
+          for (const service in countryData.services) {
+            const serviceData = countryData.services[service];
+            services.push(serviceData.id);
           }
-          return { countries };
-        })
-      );
+          const country: SimpleCountry = {
+            countryCode: countryData.countryCode.toUpperCase(),
+            name: countryData.name,
+            services: services,
+          };
+          countries.push(country);
+        }
+        return { countries };
+      }));
   }
 }
