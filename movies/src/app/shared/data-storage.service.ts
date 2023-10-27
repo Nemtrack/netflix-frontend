@@ -6,7 +6,7 @@ import {
   SimplifiedApiResponse,
   SimpleCountry,
 } from './get-models/get-countries.model';
-import { Observable, map } from 'rxjs';
+import { Observable, Subject, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -23,12 +23,10 @@ export class DataStorageService {
     },
   };
 
-  isLoading(loading: boolean): boolean {
-    return loading;
-  }
+  loadingEmitter = new Subject<boolean>();
 
   getCountriesData(): Observable<SimplifiedApiResponse> {
-    this.isLoading(true);
+    this.loadingEmitter.next(true);
     return this.http
       .request<ApiResponse>(
         this.countriesOptions.method,
@@ -52,7 +50,7 @@ export class DataStorageService {
             };
             countries.push(country);
           }
-          this.isLoading(false);
+          this.loadingEmitter.next(false);
           return { countries };
         })
       );
