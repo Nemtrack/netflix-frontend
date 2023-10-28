@@ -5,7 +5,6 @@ import { SimpleCountry } from './get-models/get-countries.model';
   providedIn: 'root',
 })
 export class FiltersService {
-  
   constructor() {}
 
   private service?: string;
@@ -15,7 +14,7 @@ export class FiltersService {
   public get countries(): SimpleCountry[] {
     return this._countries;
   }
-  
+
   public set countries(value: SimpleCountry[]) {
     this._countries = value;
   }

@@ -7,7 +7,12 @@ import { FiltersService } from '../shared/filters.service';
   styleUrls: ['./filter.component.css'],
 })
 export class FilterComponent implements OnInit {
+  toggler = true;
+  hamburgerToggle = false;
+  isChecked = false;
+
   constructor(private filter: FiltersService) {}
+
   ngOnInit(): void {
     console.log(
       'Country: ',
@@ -16,10 +21,6 @@ export class FilterComponent implements OnInit {
       this.filter.getService()
     );
   }
-
-  toggler = true;
-  hamburgerToggle = false;
-  isChecked = false;
 
   onToggleCollapsed() {
     this.toggler = !this.toggler;

@@ -5,12 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.css'],
 })
-export class ErrorComponent implements OnInit{
-
-  ngOnInit(): void {
-    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
-  }
-
+export class ErrorComponent implements OnInit {
   quote?: string;
 
   quotes: string[] = [
@@ -26,6 +21,10 @@ export class ErrorComponent implements OnInit{
     `"I think, therefore I am." - René Descartes, quoted in various philosophical discussions.`,
     `"All big discoveries are the result of thought." - Alexander Graham Bell, quoted in "The Crown" TV series.`,
     `"We all make mistakes, but the best ones are learned from." - Terry Goodkind, quoted in "The Witcher" TV series.`,
-    `"To err is human, but to really foul things up, you need a computer." - Paul R. Ehrlich, referenced in various movies and TV shows.`
+    `"To err is human, but to really foul things up, you need a computer." - Paul R. Ehrlich, referenced in various movies and TV shows.`,
   ];
+
+  ngOnInit(): void {
+    this.quote = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+  }
 }

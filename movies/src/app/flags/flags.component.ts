@@ -10,6 +10,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./flags.component.css'],
 })
 export class FlagsComponent implements OnInit, OnDestroy {
+  private isLoadingSubscription = new Subscription();
+  private getSubscription = new Subscription();
+  isLoading = false;
+  service?: string;
+  countries: SimpleCountry[] = [];
+
   constructor(
     private http: DataStorageService,
     private filters: FiltersService
@@ -31,16 +37,10 @@ export class FlagsComponent implements OnInit, OnDestroy {
     });
   }
 
-  private isLoadingSubscription = new Subscription();
-  private getSubscription = new Subscription();
-  isLoading = false;
-
   onCountryClicked(country: string): void {
     this.filters.setCountry(country);
   }
 
-  service?: string;
-  countries: SimpleCountry[] = [];
   ngOnDestroy(): void {
     this.isLoadingSubscription.unsubscribe();
     this.getSubscription.unsubscribe();

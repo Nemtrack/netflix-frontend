@@ -22,7 +22,13 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     FilterComponent,
     LoadingSpinnerComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
