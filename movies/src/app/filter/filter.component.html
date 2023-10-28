@@ -85,9 +85,11 @@
         class="btn"
         type="button"
         data-bs-theme="dark"
-        (click)="onToggleCollapsed()"
+        (click)="onToggleCollapsed(); hamburgerToggler()"
       >
-        <span class="navbar-toggler-icon"></span>
+        <div class="animated-icon2" [ngClass]="{ open: hamburgerToggle }">
+          <span></span><span></span><span></span><span></span>
+        </div>
       </button>
     </nav>
   </div>

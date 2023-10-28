@@ -18,8 +18,13 @@ export class FilterComponent implements OnInit {
   }
 
   toggler = true;
+  hamburgerToggle = false;
 
   onToggleCollapsed() {
     this.toggler = !this.toggler;
+  }
+
+  hamburgerToggler() {
+    this.hamburgerToggle = !this.hamburgerToggle;
   }
 }
