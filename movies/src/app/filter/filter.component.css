@@ -197,3 +197,8 @@ a.sidebar-link {
   width: 0%;
   left: 50%;
 }
+
+.bi-arrow-up:hover,
+.bi-arrow-down:hover {
+  color: white !important;
+}
