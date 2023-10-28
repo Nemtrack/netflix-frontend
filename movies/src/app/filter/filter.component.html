@@ -12,16 +12,17 @@
           <a class="sidebar-link">
             <i class="fa-solid fa-list pe-2"></i>
             Type:
-            <span [style.font-weight]="isBold ? 'normal' : 'bold'">Movie </span>
+            <span [style.font-weight]="isChecked ? 'normal' : 'bold'"
+              >Movie
+            </span>
             <div class="form-check form-switch d-inline-block">
               <input
                 class="form-check-input"
                 type="checkbox"
                 id="flexSwitchCheckDefault"
-                [(ngModel)]="isBold"
-                (change)="changeFontWeight()"
+                [(ngModel)]="isChecked"
               />
-              <span [style.font-weight]="isBold ? 'bold' : 'normal'"
+              <span [style.font-weight]="isChecked ? 'bold' : 'normal'"
                 >TV-Series</span
               >
             </div>
