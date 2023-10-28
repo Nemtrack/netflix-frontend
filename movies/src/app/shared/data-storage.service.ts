@@ -23,7 +23,11 @@ export class DataStorageService {
     },
   };
 
-  loadingEmitter = new Subject<boolean>();
+  private _loadingEmitter = new Subject<boolean>();
+
+  public get loadingEmitter() {
+    return this._loadingEmitter;
+  }
 
   getCountriesData(): Observable<SimplifiedApiResponse> {
     this.loadingEmitter.next(true);
