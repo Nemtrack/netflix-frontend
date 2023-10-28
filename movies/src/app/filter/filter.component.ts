@@ -19,6 +19,7 @@ export class FilterComponent implements OnInit {
 
   toggler = true;
   hamburgerToggle = false;
+  isBold = false;
 
   onToggleCollapsed() {
     this.toggler = !this.toggler;
@@ -26,5 +27,9 @@ export class FilterComponent implements OnInit {
 
   hamburgerToggler() {
     this.hamburgerToggle = !this.hamburgerToggle;
+  }
+
+  changeFontWeight() {
+    this.isBold = !this.isBold;
   }
 }
