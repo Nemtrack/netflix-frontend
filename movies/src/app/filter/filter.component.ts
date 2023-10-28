@@ -17,7 +17,7 @@ export class FilterComponent implements OnInit {
     );
   }
 
-  toggler = false;
+  toggler = true;
 
   onToggleCollapsed() {
     this.toggler = !this.toggler;

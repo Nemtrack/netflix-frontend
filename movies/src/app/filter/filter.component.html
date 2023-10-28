@@ -3,15 +3,19 @@
   <aside id="sidebar" [ngClass]="{ collapsed: toggler }">
     <div class="h-100">
       <div class="sidebar-logo">
-        <a href="#">CodzSword</a>
+        <a href="#">Filter and sort</a>
       </div>
       <!-- Sidebar Navigation -->
       <ul class="sidebar-nav">
-        <li class="sidebar-header">Tools & Components</li>
+        <li class="sidebar-header">Filter by</li>
         <li class="sidebar-item">
           <a class="sidebar-link">
             <i class="fa-solid fa-list pe-2"></i>
-            Profile
+            Type: Movie
+          </a>
+          <a class="sidebar-link">
+            <i class="fa-solid fa-list pe-2"></i>
+            Dub:
           </a>
         </li>
         <li class="sidebar-item">
@@ -23,7 +27,7 @@
             aria-controls="pages"
           >
             <i class="fa-regular fa-file-lines pe-2"></i>
-            Pages
+            Country
           </a>
           <ul
             id="pages"
@@ -31,13 +35,7 @@
             data-bs-parent="#sidebar"
           >
             <li class="sidebar-item">
-              <a class="sidebar-link">Analytics</a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Ecommerce</a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Crypto</a>
+              <a class="sidebar-link">Placeholder</a>
             </li>
           </ul>
         </li>
@@ -51,7 +49,7 @@
             aria-controls="dashboard"
           >
             <i class="fa-solid fa-sliders pe-2"></i>
-            Dashboard
+            Genre
           </a>
           <ul
             id="dashboard"
@@ -59,79 +57,23 @@
             data-bs-parent="#sidebar"
           >
             <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Dashboard Analytics</a>
-            </li>
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Dashboard Ecommerce</a>
+              <a href="#" class="sidebar-link">Placeholder</a>
             </li>
           </ul>
         </li>
-        <li class="sidebar-item">
-          <a
-            href="#"
-            class="sidebar-link collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#auth"
-            aria-expanded="false"
-            aria-controls="auth"
-          >
-            <i class="fa-regular fa-user pe-2"></i>
-            Auth
-          </a>
-          <ul
-            id="auth"
-            class="sidebar-dropdown list-unstyled collapse"
-            data-bs-parent="#sidebar"
-          >
-            <li class="sidebar-item">
-              <a href="#" class="sidebar-link">Login</a>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link">Register</a>
-            </li>
-          </ul>
-        </li>
-        <li class="sidebar-header">Multi Level Nav</li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#multi"
-            aria-expanded="false"
-            aria-controls="multi"
-          >
-            <i class="fa-solid fa-share-nodes pe-2"></i>
-            Multi Level
-          </a>
-          <ul
-            id="multi"
-            class="sidebar-dropdown list-unstyled collapse"
-            data-bs-parent="#sidebar"
-          >
-            <li class="sidebar-item">
-              <a
-                class="sidebar-link collapsed"
-                data-bs-toggle="collapse"
-                data-bs-target="#multi-two"
-                aria-expanded="false"
-                aria-controls="multi-two"
-              >
-                Two Links
-              </a>
-              <ul
-                id="multi-two"
-                class="sidebar-dropdown list-unstyled collapse"
-              >
-                <li class="sidebar-item">
-                  <a class="sidebar-link">Link 1</a>
-                </li>
-                <li class="sidebar-item">
-                  <a class="sidebar-link">Link 2</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
+        <li class="sidebar-header">Sort by</li>
+        <a class="sidebar-link">
+          <i class="fa-solid fa-list pe-2"></i>
+          Release year:
+        </a>
+        <a class="sidebar-link">
+          <i class="fa-solid fa-list pe-2"></i>
+          Rating:
+        </a>
+        <a class="sidebar-link">
+          <i class="fa-solid fa-list pe-2"></i>
+          Length:
+        </a>
       </ul>
     </div>
   </aside>
@@ -148,12 +90,5 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
-    <main class="content px-3 py-2">
-      <div class="container-fluid">
-        <div class="mb-3">
-          <h3>Bootstrap Sidebar Tutorial</h3>
-        </div>
-      </div>
-    </main>
   </div>
 </div>
