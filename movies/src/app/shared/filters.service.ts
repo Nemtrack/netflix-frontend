@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { SimpleCountry } from './get-models/get-countries.model';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,15 @@ export class FiltersService {
 
   private service?: string;
   private country?: string;
+  private _countries: SimpleCountry[] = [];
+
+  public get countries(): SimpleCountry[] {
+    return this._countries;
+  }
+  
+  public set countries(value: SimpleCountry[]) {
+    this._countries = value;
+  }
 
   setService(service: string) {
     this.service = service;

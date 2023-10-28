@@ -23,7 +23,8 @@ export class FlagsComponent implements OnInit, OnDestroy {
       }
     );
     this.getSubscription = this.http.getCountriesData().subscribe((data) => {
-      this.countries = data.countries.filter((country) => {
+      this.filters.countries = data.countries;
+      this.countries = this.filters.countries.filter((country) => {
         return country.services.includes(this.service as string);
       });
       console.log(this.countries);
