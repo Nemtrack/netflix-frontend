@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeScreenComponent } from './welcome-screen/welcome-screen.component';
@@ -12,8 +10,6 @@ import { FlagsComponent } from './flags/flags.component';
 import { ErrorComponent } from './error/error.component';
 import { FilterComponent } from './filter/filter.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
-
-library.add(faArrowUp, faArrowDown);
 
 @NgModule({
   declarations: [
