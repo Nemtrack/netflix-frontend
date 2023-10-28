@@ -10,7 +10,9 @@ import { MoviesComponent } from './movies/movies.component';
 import { FlagsComponent } from './flags/flags.component';
 import { ErrorComponent } from './error/error.component';
 import { FilterComponent } from './filter/filter.component';
+
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent],

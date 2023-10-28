@@ -28,28 +28,40 @@
             </div>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a
-            class="sidebar-link collapsed"
-            data-bs-toggle="collapse"
-            data-bs-target="#pages"
-            aria-expanded="false"
-            aria-controls="pages"
+        <li>
+          <p-dropdown
+            [options]="countries"
+            [(ngModel)]="selectedCountry"
+            optionLabel="name"
+            [showClear]="true"
+            placeholder="Select a Country"
           >
-            <i class="fa-regular fa-file-lines pe-2"></i>
-            Country
-          </a>
-          <ul
-            id="pages"
-            class="sidebar-dropdown list-unstyled collapse open"
-            data-bs-parent="#sidebar"
-          >
-            <li class="sidebar-item">
-              <a class="sidebar-link">
-                <div class="alert alert-primary bg-light py-5"></div>
-              </a>
-            </li>
-          </ul>
+            <ng-template pTemplate="selectedItem">
+              <div
+                class="flex align-items-center gap-2"
+                *ngIf="selectedCountry"
+              >
+                <img
+                  src="https://flagcdn.com/w320/{{
+                    selectedCountry.countryCode | lowercase
+                  }}.png"
+                  style="width: 18px"
+                />
+                <div>{{ selectedCountry.name }}</div>
+              </div>
+            </ng-template>
+            <ng-template let-country pTemplate="item">
+              <div class="flex align-items-center gap-2">
+                <img
+                  src="https://flagcdn.com/w320/{{
+                    country.countryCode | lowercase
+                  }}.png"
+                  style="width: 18px"
+                />
+                <div>{{ country.name }}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </li>
         <li class="sidebar-item">
           <a

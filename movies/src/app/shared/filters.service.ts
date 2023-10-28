@@ -8,7 +8,7 @@ export class FiltersService {
   constructor() {}
 
   private service?: string;
-  private country?: string;
+  private country?: SimpleCountry;
   private _countries: SimpleCountry[] = [];
 
   public get countries(): SimpleCountry[] {
@@ -23,7 +23,7 @@ export class FiltersService {
     this.service = service;
   }
 
-  setCountry(country: string) {
+  setCountry(country: SimpleCountry) {
     this.country = country;
   }
 
@@ -31,7 +31,7 @@ export class FiltersService {
     return this.service;
   }
 
-  getCountry(): string | undefined {
+  getCountry(): SimpleCountry | undefined {
     return this.country;
   }
 }

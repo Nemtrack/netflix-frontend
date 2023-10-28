@@ -10,16 +10,22 @@ export class FilterComponent implements OnInit {
   toggler = true;
   hamburgerToggle = false;
   isChecked = false;
+  countries: { name: string; countryCode: string }[] = [];
+  selectedCountry?: { name: string; countryCode: string };
 
   constructor(private filter: FiltersService) {}
 
   ngOnInit(): void {
-    console.log(
-      'Country: ',
-      this.filter.getCountry(),
-      'Service: ',
-      this.filter.getService()
-    );
+    this.countries = this.filter.countries.map((country) => {
+      return { name: country.name, countryCode: country.countryCode };
+    });
+    const country = this.filter.getCountry();
+    if (country) {
+      this.selectedCountry = {
+        name: country.name,
+        countryCode: country.countryCode,
+      };
+    }
   }
 
   onToggleCollapsed() {

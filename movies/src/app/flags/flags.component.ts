@@ -29,15 +29,15 @@ export class FlagsComponent implements OnInit, OnDestroy {
       }
     );
     this.getSubscription = this.http.getCountriesData().subscribe((data) => {
-      this.filters.countries = data.countries;
-      this.countries = this.filters.countries.filter((country) => {
+      this.countries = data.countries.filter((country) => {
         return country.services.includes(this.service as string);
       });
+      this.filters.countries = this.countries;
       console.log(this.countries);
     });
   }
 
-  onCountryClicked(country: string): void {
+  onCountryClicked(country: SimpleCountry): void {
     this.filters.setCountry(country);
   }
 
