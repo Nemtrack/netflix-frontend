@@ -24,12 +24,12 @@ export class FlagsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.service = this.filters.getService();
     this.isLoadingSubscription = this.http.loadingEmitter.subscribe(
-      (receivedLoading) => {
+      (receivedLoading: boolean) => {
         this.isLoading = receivedLoading;
       }
     );
-    this.getSubscription = this.http.getCountriesData().subscribe((data) => {
-      this.countries = data.countries.filter((country) => {
+    this.getSubscription = this.http.getCountriesData().subscribe((data: { countries: any[]; }) => {
+      this.countries = data.countries.filter((country: { services: string | string[]; }) => {
         return country.services.includes(this.service as string);
       });
       this.filters.countries = this.countries;
