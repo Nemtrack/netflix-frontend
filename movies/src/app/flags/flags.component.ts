@@ -28,13 +28,17 @@ export class FlagsComponent implements OnInit, OnDestroy {
         this.isLoading = receivedLoading;
       }
     );
-    this.getSubscription = this.http.getCountriesData().subscribe((data: { countries: any[]; }) => {
-      this.countries = data.countries.filter((country: { services: string | string[]; }) => {
-        return country.services.includes(this.service as string);
+    this.getSubscription = this.http
+      .getCountriesData()
+      .subscribe((data: { countries: any[] }) => {
+        this.countries = data.countries.filter(
+          (country: { services: string | string[] }) => {
+            return country.services.includes(this.service as string);
+          }
+        );
+        this.filters.countries = this.countries;
+        console.log(this.countries);
       });
-      this.filters.countries = this.countries;
-      console.log(this.countries);
-    });
   }
 
   onCountryClicked(country: SimpleCountry): void {
