@@ -4,8 +4,8 @@
 An Angular application which utilizes the Streaming Availability RapidAPI API to help users find movies and series available on different streaming platforms.
 
 ## Technologies Used
-- Angular
-- Streaming Availability RapidAPI
+- Angular v16
+- Streaming Availability RapidAPI API
 - flagcdn.com for flag images
 
 ## Pages
@@ -102,3 +102,20 @@ export class DataStorageService {
   }
 }
 ```
+
+## Installation
+Use
+```bash
+npm install
+```
+to install all necessary modules for running the application.
+
+## Running The App
+Use
+```bash
+npm start
+```
+to start the application.
+
+## Default Host
+Visit [localhost:4200](http://localhost:4200/) to access the server
