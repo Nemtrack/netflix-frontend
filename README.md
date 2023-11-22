@@ -48,6 +48,7 @@ An Angular application which utilizes the Streaming Availability RapidAPI API to
         console.log(this.countries);
       });
   }
+```
 
 ### The Data Storage Service Itself
 ```typescript
@@ -100,3 +101,4 @@ export class DataStorageService {
       );
   }
 }
+```
