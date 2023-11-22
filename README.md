@@ -1,7 +1,7 @@
 # netflix-frontend
 
 ## Introduction
-This application utilizes the Streaming Availability RapidAPI API to help users find movies and series available on different streaming platforms.
+An Angular application which utilizes the Streaming Availability RapidAPI API to help users find movies and series available on different streaming platforms.
 
 ## Technologies Used
 - Angular
@@ -24,3 +24,27 @@ This application utilizes the Streaming Availability RapidAPI API to help users 
 - Routing: Clicking on a flag on the Streaming Service Details Page navigates the user to this page.
 - Content Sorting: Users can sort and filter movies/series based on different criteria.
 - Utilizes Streaming Availability RapidAPI to fetch data.
+
+## Code Examples
+
+### Component Initialization For Flag Sorting
+```typescript
+  ngOnInit(): void {
+    this.service = this.filters.getService();
+    this.isLoadingSubscription = this.http.loadingEmitter.subscribe(
+      (receivedLoading: boolean) => {
+        this.isLoading = receivedLoading;
+      }
+    );
+    this.getSubscription = this.http
+      .getCountriesData()
+      .subscribe((data: { countries: any[] }) => {
+        this.countries = data.countries.filter(
+          (country: { services: string | string[] }) => {
+            return country.services.includes(this.service as string);
+          }
+        );
+        this.filters.countries = this.countries;
+        console.log(this.countries);
+      });
+  }
